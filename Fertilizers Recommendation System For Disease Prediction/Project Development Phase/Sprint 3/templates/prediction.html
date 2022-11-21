@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/icons8_potted_plant.ico">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/all.min.css">
+
+  <script>
+    function preview(){
+      frame.src=URL.createObjectURL(event.target.files[0]);
+    }
+    </script>
+
+</head>
+<body class="body">
+  <div class="container home">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <div class="container-fluid">
+        <a class="brand navbar-brand text-dark fw-bold" href="#">IBM</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-nav-scroll justify-content-end" id="navbarScroll">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/prediction">Predict</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <section id="home">
+    <div class="container">
+      <div class="row justify-content-between align-items-center pt-5 g-3">
+        <div class="col-md-6 g-2" style="width:60%;">
+          <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="uploadimage" class="image text-dark display-6 fw-bold">Plant Disease Prediction</label><br>
+              <h4 style="font-style:inherit;"><pre>   Vegitables OR Fruit plant</pre></h4>
+              <!--<input type="file" class="form-control in" id="image accept="image/png, image/jpeg" onchange="preview()" placeholder="">
+            </div>
+            <img class="bg-light" id="frame" src="" width="100px" height="100px" alt="🍃" />
+
+              <input id="image" type="file" name="image" accept="image/png, image/jpeg" onchange="preview()"><br><br>
+            <img id="frame" src="" width="100px" height="100px" alt="Choose an image" />
+            <button type="file" class="btn btn-primary submit" id="Pridict">Predict</button>-->
+                <input id="Type_of_plant" type="text" name="PLANT TYPE"><br><br>
+                <input id="image" type="file" name="image" accept="image/png, image/jpeg" onchange="preview()"><br><br>
+                <img id="frame" src="" width="100px" height="100px" alt="Choose an image" />
+                <p><input class="btn btn-primary submit" type="submit" value="submit" name="PREDICT IT"></p>
+            </div>
+          </form>
+      </div> 
+      <div class="col-md-4">
+        <img src="/static/assets/Dp.jpg" alt="plant" class="pos">
+      </div>
+    </div>
+     </section>
+
+           <!--- <input id="image" type="file" name="file" accept="image/png, image/jpeg" onchange="preview()"><br><br> -->
+            
+
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery-3.6.1.js"></script>
+</body>
+</html>
